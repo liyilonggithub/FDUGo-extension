@@ -1,0 +1,19 @@
+{
+        "name": "FDU Go",
+        "manifest_version": 2,
+        "minimum_chrome_version": "20",
+        "version": "0.5",
+        "description": "类似STU校园中转站但增加了很多功能的Chrome插件",
+        "icons": { "128": "icon_128.png" },
+        "permissions": ["\u003Call_urls\u003E", "storage", "tabs", "bookmarks"],
+        "content_scripts":[{
+                "all_frames": false,
+                "css": ["style/style.css"],
+                "js": ["js/core.js", "js/corePlugins.js", "js/extendedPlugins.js"],
+                "matches": [ "\u003Call_urls\u003E" ]
+        }],
+        "background":{
+                "scripts" : ["js/localDBData.js", "js/background.js"]
+        },
+        "web_accessible_resources": [ "images/icons.png" ]
+}
